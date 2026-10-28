@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="English VClass — Present, Past & Future Tenses Practice">
+<title>English VClass • Tenses Masterclass • Present • Past • Future</title>
+<style>
+:root{
+  --primary:#123c69;
+  --secondary:#1f7a8c;
+  --accent:#f4b942;
+  --light:#f4f7fb;
+  --dark:#17202a;
+  --muted:#667085;
+  --green:#16803c;
+  --green-bg:#eaf7ee;
+  --red:#c62828;
+  --red-bg:#fdecec;
+  --white:#fff;
+  --shadow:0 8px 24px rgba(18,60,105,.10);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--light);
+  color:var(--dark);
+  line-height:1.6;
+}
+header{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;
+  padding:28px 16px 34px;
+}
+.header-inner{max-width:980px;margin:auto}
+.brand{font-weight:800;letter-spacing:.5px;font-size:1.05rem}
+header h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.15;margin:12px 0 8px}
+header p{margin:0;opacity:.95;font-size:1rem}
+.progress-wrap{margin-top:22px;background:rgba(255,255,255,.2);border-radius:99px;height:10px;overflow:hidden}
+.progress{width:10%;height:100%;background:var(--accent);border-radius:99px;transition:width .5s ease}
+nav{
+  position:sticky;top:0;z-index:20;
+  background:white;border-bottom:1px solid #e5e7eb;
+  overflow-x:auto;white-space:nowrap;
+}
+nav .nav-inner{max-width:980px;margin:auto;display:flex}
+nav a{
+  display:inline-block;padding:12px 14px;color:var(--primary);
+  text-decoration:none;font-weight:700;font-size:.9rem;
+}
+nav a.done::after{content:" ✓";color:var(--green);font-weight:800}
+main{max-width:980px;margin:auto;padding:20px 14px 50px}
+.card{
+  background:white;border-radius:var(--radius);padding:22px;
+  margin:18px 0;box-shadow:var(--shadow);
+}
+.card h2{color:var(--primary);margin-top:0;font-size:1.45rem}
+.card h3{color:var(--secondary);margin-bottom:8px}
+.badge{
+  display:inline-block;background:#e8f2fb;color:var(--primary);
+  padding:5px 10px;border-radius:999px;font-size:.8rem;font-weight:800;
+}
+.goal-list{padding-left:20px}
+.goal-list li{margin:7px 0}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:420px}
+th,td{padding:12px;border-bottom:1px solid #e8ebef;text-align:left}
+th{background:#eef4fa;color:var(--primary)}
+.example{
+  background:#f8fafc;border-left:5px solid var(--secondary);
+  padding:13px 15px;margin:12px 0;border-radius:8px;
+}
+.example-audio{
+  display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;
+}
+.audio-btn{
+  background:#eaf0f6;border:1px solid #d0d9e6;
+  border-radius:30px;padding:4px 12px;font-size:.75rem;
+  font-weight:700;color:var(--primary);cursor:pointer;
+  display:inline-flex;align-items:center;gap:4px;transition:.15s;
+}
+.audio-btn:hover{background:#d0d9e6}
+.audio-btn.playing{background:var(--secondary);color:white;border-color:var(--secondary)}
+.en{font-weight:700;color:var(--primary)}
+.pt{color:var(--muted)}
+.tip{
+  background:#fff8e7;border-left:5px solid var(--accent);
+  padding:14px;border-radius:8px;margin-top:14px;
+}
+.exercise{
+  border:1px solid #e3e8ef;border-radius:14px;padding:16px;margin:14px 0;
+}
+input[type="text"],textarea,select{
+  width:100%;padding:12px;border:1px solid #ccd5df;border-radius:10px;
+  font:inherit;background:white;
+}
+textarea{min-height:110px;resize:vertical}
+button{
+  border:0;border-radius:12px;padding:12px 17px;
+  background:var(--primary);color:white;font-weight:800;
+  cursor:pointer;font-size:1rem;
+}
+button:hover{filter:brightness(1.08)}
+button.secondary{background:var(--secondary)}
+button.light{background:#eaf0f6;color:var(--primary)}
+.feedback{
+  margin-top:10px;padding:11px;border-radius:10px;font-weight:700;display:none;
+}
+.feedback.correct{display:block;background:var(--green-bg);color:var(--green)}
+.feedback.wrong{display:block;background:var(--red-bg);color:var(--red)}
+.option{
+  display:block;width:100%;text-align:left;margin:8px 0;
+  background:#f5f7fa;color:var(--dark);border:1px solid #dce2e9;
+}
+.option.correct{background:var(--green-bg);border-color:#9ed7ae;color:var(--green)}
+.option.wrong{background:var(--red-bg);border-color:#efaaaa;color:var(--red)}
+.option:disabled{cursor:default;opacity:1}
+.score{
+  text-align:center;background:#eef4fa;border-radius:16px;padding:20px;
+  margin-top:20px;
+}
+.score strong{font-size:2.2rem;color:var(--primary)}
+.audio-box{
+  text-align:center;background:#f5f8fb;border-radius:15px;padding:20px;
+}
+#transcript{display:none;margin-top:15px}
+.speaking-card{
+  background:linear-gradient(135deg,#f5f8fb,#ffffff);
+  border:1px solid #e0e7ef;
+}
+footer{
+  text-align:center;margin-top:30px;padding:28px 15px;
+  color:#777;background:white;border-top:1px solid #e5e7eb;
+}
+footer .copyright{font-weight:700}
+.small{font-size:.88rem;color:var(--muted)}
+.hidden{display:none}
+@media(max-width:600px){
+  header{padding-top:23px}
+  .card{padding:18px;margin:14px 0}
+  nav a{padding:11px 12px;font-size:.82rem}
+  button{width:100%;margin-top:5px}
+  .audio-btn{width:auto;margin-top:0}
+}
+/* Tense badge */
+.tense-badge{
+  display:inline-block;font-size:.7rem;font-weight:800;
+  padding:3px 10px;border-radius:999px;margin-bottom:6px;
+  letter-spacing:.3px;
+}
+.tb-present{background:#e3f2fd;color:#0d47a1}
+.tb-past{background:#fce4ec;color:#880e4f}
+.tb-future{background:#e8f5e9;color:#1b5e20}
+/* Tab bar */
+.tab-bar{display:flex;gap:0;margin:16px 0 0;border-bottom:2px solid #e3e8ef;flex-wrap:wrap}
+.tab-bar button{
+  background:none;color:var(--muted);border:0;border-radius:0;
+  padding:10px 18px;font-weight:700;font-size:.9rem;
+  border-bottom:3px solid transparent;margin-bottom:-2px;
+  cursor:pointer;width:auto;
+}
+.tab-bar button.active{color:var(--primary);border-bottom-color:var(--primary)}
+.tab-bar button:hover{color:var(--primary)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+/* Listening questions */
+.listening-q{margin:12px 0}
+.listening-q p{margin:0 0 4px;font-weight:700}
+.listening-q select{max-width:320px}
+/* Translation exercise */
+.translation-ex{background:#f8fafc;border-radius:12px;padding:14px;margin:10px 0;border:1px solid #e3e8ef}
+.translation-ex .pt-sentence{font-weight:700;color:var(--secondary);margin-bottom:8px}
+.translation-ex .answer-reveal{display:none;margin-top:8px;padding:8px 12px;background:var(--green-bg);border-radius:8px;color:var(--green);font-weight:700}
+.translation-ex .answer-reveal.visible{display:block}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">English VClass • Edson D'Aguiar</div>
+    <h1>Tenses Masterclass — Present • Past • Future</h1>
+    <p>Simple · Continuous · Perfect · Perfect Continuous · Áudio US/UK</p>
+    <div class="progress-wrap" aria-label="Progresso da aula"><div class="progress" id="globalProgress"></div></div>
+    <p class="small" style="color:white;margin-top:8px"><span id="progressLabel">0</span>% concluído • Curso English Foundations • Módulo Tenses</p>
+  </div>
+</header>
+
+<nav aria-label="Navegação da aula">
+  <div class="nav-inner">
+    <a href="#objetivos" data-section="objetivos">Objetivos</a>
+    <a href="#grammar" data-section="grammar">Grammar</a>
+    <a href="#exercises" data-section="exercises">Exercises</a>
+    <a href="#listening" data-section="listening">Listening</a>
+    <a href="#speaking" data-section="speaking">Speaking</a>
+    <a href="#quiz" data-section="quiz">Quiz</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ========== OBJETIVOS ========== -->
+<section class="card" id="objetivos">
+  <span class="badge">A2–B1 • INTERMEDIATE</span>
+  <h2>🎯 Objetivos da aula</h2>
+  <p>Ao terminar esta aula, você deverá ser capaz de:</p>
+  <ul class="goal-list">
+    <li>Reconhecer e usar os quatro tempos do <strong>presente</strong>: Simple, Continuous, Perfect Simple, Perfect Continuous.</li>
+    <li>Reconhecer e usar os quatro tempos do <strong>passado</strong>: Simple, Continuous, Perfect Simple, Perfect Continuous.</li>
+    <li>Reconhecer e usar as formas de <strong>futuro</strong>: Will, Going to, Present Simple/Continuous para futuro, Future Continuous, Future Perfect.</li>
+    <li>Diferenciar <strong>ação concluída</strong>, <strong>ação em andamento</strong> e <strong>duração</strong> em cada tempo.</li>
+    <li>Identificar informações básicas em um pequeno áudio/texto.</li>
+  </ul>
+</section>
+
+<!-- ========== GRAMMAR ========== -->
+<section class="card" id="grammar">
+  <h2>📘 Grammar — The Three Tenses</h2>
+
+  <div class="tab-bar" id="grammarTabs">
+    <button class="active" data-tab="present" onclick="switchGrammarTab('present')">📖 Present</button>
+    <button data-tab="past" onclick="switchGrammarTab('past')">📖 Past</button>
+    <button data-tab="future" onclick="switchGrammarTab('future')">🔮 Future</button>
+  </div>
+
+  <!-- ---------- PRESENT ---------- -->
+  <div class="tab-panel active" id="panel-present">
+    <h3>📘 Present Simple</h3>
+    <p><strong>Usos:</strong> situações permanentes · verdades universais · hábitos</p>
+    <p><strong>Estrutura:</strong> Sujeito + verbo base (add -s/-es para he/she/it)</p>
+    <div class="example">
+      <div class="en">She works at a hospital.</div>
+      <div class="pt">Ela trabalha em um hospital.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="She works at a hospital." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="She works at a hospital." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">Water boils at 100°C.</div>
+      <div class="pt">A água ferve a 100°C.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="Water boils at 100 degrees Celsius." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="Water boils at 100 degrees Celsius." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">I play tennis every Saturday.</div>
+      <div class="pt">Eu jogo tênis todo sábado.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I play tennis every Saturday." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I play tennis every Saturday." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>📙 Present Continuous</h3>
+    <p><strong>Usos:</strong> ação acontecendo agora · ação temporária · com "always" para irritação</p>
+    <p><strong>Estrutura:</strong> am/is/are + verbo-ing</p>
+    <div class="example">
+      <div class="en">I am reading a book right now.</div>
+      <div class="pt">Estou lendo um livro agora.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I am reading a book right now." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I am reading a book right now." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">She is studying for her exams these days.</div>
+      <div class="pt">Ela está estudando para as provas esses dias.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="She is studying for her exams these days." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="She is studying for her exams these days." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">He is always losing his keys!</div>
+      <div class="pt">Ele está sempre perdendo as chaves! (irritação)</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="He is always losing his keys!" data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="He is always losing his keys!" data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>📗 Present Perfect Simple</h3>
+    <p><strong>Usos:</strong> período não terminado · momento não mencionado · resultado presente · for/since · just/ever/already/yet</p>
+    <p><strong>Estrutura:</strong> have/has + past participle</p>
+    <div class="example">
+      <div class="en">I have lost my keys.</div>
+      <div class="pt">Perdi minhas chaves. (resultado: não tenho as chaves)</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I have lost my keys." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I have lost my keys." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">She has lived here since 2015.</div>
+      <div class="pt">Ela mora aqui desde 2015.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="She has lived here since 2015." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="She has lived here since 2015." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>⏳ Present Perfect Continuous</h3>
+    <p><strong>Usos:</strong> foco na duração até o presente · ação que continua · ênfase na atividade</p>
+    <p><strong>Estrutura:</strong> have/has + been + verbo-ing</p>
+    <div class="example">
+      <div class="en">I have been waiting for an hour.</div>
+      <div class="pt">Estou esperando há uma hora.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I have been waiting for an hour." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I have been waiting for an hour." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">She has been working here since 2020.</div>
+      <div class="pt">Ela trabalha aqui desde 2020.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="She has been working here since 2020." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="She has been working here since 2020." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>⚖️ Simple vs Continuous:</strong> Present Simple → ações gerais, rotinas, fatos. Present Continuous → ações temporárias, acontecendo agora. <em>I work in an office. (permanente) vs I am working from home this week. (temporário)</em><br>
+      <strong>🔄 Perfect Simple vs Continuous:</strong> Perfect Simple → foco no resultado. Perfect Continuous → foco na duração. <em>I have painted the bedroom. (resultado) vs I have been painting the house for 2 days. (atividade)</em>
+    </div>
+  </div>
+
+  <!-- ---------- PAST ---------- -->
+  <div class="tab-panel" id="panel-past">
+    <h3>📘 Past Simple</h3>
+    <p><strong>Usos:</strong> ação concluída no passado (tempo específico) · estado passado · hábito passado</p>
+    <p><strong>Estrutura:</strong> verbo + -ed (regular) / forma própria (irregular) · Negativa: did + not + base · Perguntas: Did + sujeito + base?</p>
+    <div class="example">
+      <div class="en">I visited London last year.</div>
+      <div class="pt">Eu visitei Londres no ano passado.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I visited London last year." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I visited London last year." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">We played tennis every Saturday when we were kids.</div>
+      <div class="pt">Nós jogávamos tênis todo sábado quando éramos crianças.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="We played tennis every Saturday when we were kids." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="We played tennis every Saturday when we were kids." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>🔄 Used to</h3>
+    <p><strong>Usos:</strong> hábitos ou estados no passado que não acontecem mais</p>
+    <p><strong>Estrutura:</strong> used to + infinitivo</p>
+    <div class="example">
+      <div class="en">I used to play the guitar, but I don't anymore.</div>
+      <div class="pt">Eu costumava tocar violão, mas não toco mais.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I used to play the guitar, but I don't anymore." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I used to play the guitar, but I don't anymore." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>📙 Past Continuous</h3>
+    <p><strong>Usos:</strong> ação em andamento em momento específico do passado · ação interrompida</p>
+    <p><strong>Estrutura:</strong> was/were + verbo-ing</p>
+    <div class="example">
+      <div class="en">I was watching TV at 8 pm yesterday.</div>
+      <div class="pt">Eu estava assistindo TV às 8 da noite ontem.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I was watching TV at 8 pm yesterday." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I was watching TV at 8 pm yesterday." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">She was cooking when I arrived.</div>
+      <div class="pt">Ela estava cozinhando quando eu cheguei.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="She was cooking when I arrived." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="She was cooking when I arrived." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>📗 Past Perfect Simple</h3>
+    <p><strong>Usos:</strong> ação que aconteceu antes de outra no passado · foco no resultado antes de um momento passado</p>
+    <p><strong>Estrutura:</strong> had + past participle</p>
+    <div class="example">
+      <div class="en">I had already eaten when she arrived.</div>
+      <div class="pt">Eu já tinha comido quando ela chegou.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I had already eaten when she arrived." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I had already eaten when she arrived." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>⏳ Past Perfect Continuous</h3>
+    <p><strong>Usos:</strong> ênfase na duração de uma ação antes de outra no passado</p>
+    <p><strong>Estrutura:</strong> had + been + verbo-ing</p>
+    <div class="example">
+      <div class="en">I had been waiting for an hour when the bus finally arrived.</div>
+      <div class="pt">Eu estava esperando há uma hora quando o ônibus finalmente chegou.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I had been waiting for an hour when the bus finally arrived." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I had been waiting for an hour when the bus finally arrived." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>⚖️ Simple vs Continuous:</strong> Past Simple → ação concluída. Past Continuous → ação em andamento. <em>I walked home. (completa) vs I was walking home when it started to rain. (em progresso)</em><br>
+      <strong>🔄 Perfect Simple vs Continuous:</strong> Perfect Simple → foco no resultado. Perfect Continuous → foco na duração. <em>I had painted the room when she arrived. vs I had been painting the room for two hours when she arrived.</em>
+    </div>
+  </div>
+
+  <!-- ---------- FUTURE ---------- -->
+  <div class="tab-panel" id="panel-future">
+    <h3>✨ Future Simple (Will)</h3>
+    <p><strong>Usos:</strong> previsões baseadas em opinião · decisões espontâneas · promessas, ofertas, pedidos</p>
+    <p><strong>Estrutura:</strong> sujeito + will + verbo base · Negativa: won't + base</p>
+    <div class="example">
+      <div class="en">I think it will rain tomorrow.</div>
+      <div class="pt">Acho que vai chover amanhã.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I think it will rain tomorrow." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I think it will rain tomorrow." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">I'll call you a taxi.</div>
+      <div class="pt">Vou chamar um táxi para você. (decisão espontânea)</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I'll call you a taxi." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I'll call you a taxi." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>🎯 Going to</h3>
+    <p><strong>Usos:</strong> intenções/planos já decididos · previsões baseadas em evidências presentes</p>
+    <p><strong>Estrutura:</strong> am/is/are + going to + verbo base</p>
+    <div class="example">
+      <div class="en">I'm going to go to the dentist tomorrow.</div>
+      <div class="pt">Vou ao dentista amanhã. (plano)</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I'm going to go to the dentist tomorrow." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I'm going to go to the dentist tomorrow." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">Look at those clouds! It's going to rain.</div>
+      <div class="pt">Olhe aquelas nuvens! Vai chover. (evidência)</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="Look at those clouds! It's going to rain." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="Look at those clouds! It's going to rain." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>📅 Present Simple (Horários Fixos)</h3>
+    <p><strong>Usos:</strong> horários de transporte · programas/eventos fixos · fatos programados</p>
+    <div class="example">
+      <div class="en">The train leaves at 7 pm.</div>
+      <div class="pt">O trem sai às 19h. (horário fixo)</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="The train leaves at 7 pm." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="The train leaves at 7 pm." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">The movie starts in ten minutes.</div>
+      <div class="pt">O filme começa em dez minutos.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="The movie starts in ten minutes." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="The movie starts in ten minutes." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>⏰ Present Continuous (Arranjos)</h3>
+    <p><strong>Usos:</strong> arranjos pessoais combinados · ações prestes a acontecer</p>
+    <div class="example">
+      <div class="en">I'm meeting Mary tomorrow.</div>
+      <div class="pt">Vou encontrar a Mary amanhã. (combinado)</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I'm meeting Mary tomorrow." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I'm meeting Mary tomorrow." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">The bus is leaving in ten minutes.</div>
+      <div class="pt">O ônibus está saindo em dez minutos. (prestes a acontecer)</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="The bus is leaving in ten minutes." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="The bus is leaving in ten minutes." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>⚡ Future Continuous</h3>
+    <p><strong>Usos:</strong> ação em andamento em momento específico no futuro · planos/arranjos (mais educado)</p>
+    <p><strong>Estrutura:</strong> will + be + verbo-ing</p>
+    <div class="example">
+      <div class="en">I will be cooking when you get home.</div>
+      <div class="pt">Estarei cozinhando quando você chegar em casa.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I will be cooking when you get home." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I will be cooking when you get home." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">This time tomorrow, I will be flying to London.</div>
+      <div class="pt">A esta hora amanhã, estarei voando para Londres.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="This time tomorrow, I will be flying to London." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="This time tomorrow, I will be flying to London." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <h3>🏁 Future Perfect Simple</h3>
+    <p><strong>Usos:</strong> ação que estará concluída antes de um momento específico no futuro</p>
+    <p><strong>Estrutura:</strong> will + have + past participle</p>
+    <div class="example">
+      <div class="en">I will have finished this report by 6 o'clock.</div>
+      <div class="pt">Terei terminado este relatório antes das 6 horas.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="I will have finished this report by 6 o'clock." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I will have finished this report by 6 o'clock." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+    <div class="example">
+      <div class="en">By next year, they will have lived here for ten years.</div>
+      <div class="pt">No ano que vem, eles terão morado aqui por dez anos.</div>
+      <div class="example-audio">
+        <button class="audio-btn" data-phrase="By next year, they will have lived here for ten years." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="By next year, they will have lived here for ten years." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>⚖️ Will vs Going to:</strong> Will → decisão espontânea, previsão pessoal. Going to → plano/intenção já decidida, previsão com evidência. <em>I think I'll have a coffee. (espontâneo) vs I'm going to have coffee with Sarah at 3 pm. (plano)</em><br>
+      <strong>📆 Present Simple vs Continuous (Futuro):</strong> Simple → horários fixos, oficiais. Continuous → arranjos pessoais. <em>The train leaves at 8 am. vs I'm leaving at 8 am tomorrow.</em><br>
+      <strong>⏳ Continuous vs Perfect:</strong> Continuous → em andamento. Perfect → já terminado. <em>At 8 pm, I will be cooking dinner. vs By 8 pm, I will have cooked dinner.</em>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EXERCISES ========== -->
+<section class="card" id="exercises">
+  <h2>✏️ Exercises</h2>
+
+  <div class="exercise">
+    <h3>Exercise 1 — Present Simple</h3>
+    <p>She ______ at a hospital.</p>
+    <select id="ex1">
+      <option value="">Choose an answer</option>
+      <option>works</option><option>is working</option><option>has worked</option><option>has been working</option>
+    </select>
+    <button class="secondary" onclick="checkEx1()">Check answer</button>
+    <div id="ex1fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 2 — Present Continuous</h3>
+    <p>Look! The children ______ in the garden.</p>
+    <select id="ex2">
+      <option value="">Choose an answer</option>
+      <option>play</option><option>are playing</option><option>have played</option><option>have been playing</option>
+    </select>
+    <button class="secondary" onclick="checkEx2()">Check answer</button>
+    <div id="ex2fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 3 — Present Perfect Simple</h3>
+    <p>I ______ here for three years.</p>
+    <select id="ex3">
+      <option value="">Choose an answer</option>
+      <option>work</option><option>am working</option><option>have worked</option><option>have been working</option>
+    </select>
+    <button class="secondary" onclick="checkEx3()">Check answer</button>
+    <div id="ex3fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 4 — Present Perfect Continuous</h3>
+    <p>She is tired because she ______ all morning.</p>
+    <select id="ex4">
+      <option value="">Choose an answer</option>
+      <option>runs</option><option>is running</option><option>has run</option><option>has been running</option>
+    </select>
+    <button class="secondary" onclick="checkEx4()">Check answer</button>
+    <div id="ex4fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 5 — Past Simple</h3>
+    <p>I ______ to the cinema yesterday.</p>
+    <select id="ex5">
+      <option value="">Choose an answer</option>
+      <option>go</option><option>went</option><option>was going</option><option>had gone</option>
+    </select>
+    <button class="secondary" onclick="checkEx5()">Check answer</button>
+    <div id="ex5fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 6 — Past Continuous</h3>
+    <p>She ______ when I arrived.</p>
+    <select id="ex6">
+      <option value="">Choose an answer</option>
+      <option>sleeps</option><option>slept</option><option>was sleeping</option><option>had slept</option>
+    </select>
+    <button class="secondary" onclick="checkEx6()">Check answer</button>
+    <div id="ex6fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 7 — Past Perfect Simple</h3>
+    <p>They ______ the house before we moved in.</p>
+    <select id="ex7">
+      <option value="">Choose an answer</option>
+      <option>paint</option><option>painted</option><option>were painting</option><option>had painted</option>
+    </select>
+    <button class="secondary" onclick="checkEx7()">Check answer</button>
+    <div id="ex7fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 8 — Past Perfect Continuous</h3>
+    <p>He ______ for two hours when she finally called.</p>
+    <select id="ex8">
+      <option value="">Choose an answer</option>
+      <option>waits</option><option>waited</option><option>was waiting</option><option>had been waiting</option>
+    </select>
+    <button class="secondary" onclick="checkEx8()">Check answer</button>
+    <div id="ex8fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 9 — Future (Will)</h3>
+    <p>I think it ______ sunny tomorrow.</p>
+    <select id="ex9">
+      <option value="">Choose an answer</option>
+      <option>will be</option><option>is going to be</option><option>is</option><option>will have been</option>
+    </select>
+    <button class="secondary" onclick="checkEx9()">Check answer</button>
+    <div id="ex9fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 10 — Future (Going to)</h3>
+    <p>Look at those dark clouds! It ______ rain.</p>
+    <select id="ex10">
+      <option value="">Choose an answer</option>
+      <option>will</option><option>is going to</option><option>is</option><option>will have</option>
+    </select>
+    <button class="secondary" onclick="checkEx10()">Check answer</button>
+    <div id="ex10fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 11 — Future Continuous</h3>
+    <p>This time tomorrow, I ______ on the beach.</p>
+    <select id="ex11">
+      <option value="">Choose an answer</option>
+      <option>lie</option><option>will lie</option><option>will be lying</option><option>will have lied</option>
+    </select>
+    <button class="secondary" onclick="checkEx11()">Check answer</button>
+    <div id="ex11fb" class="feedback"></div>
+  </div>
+
+  <div class="exercise">
+    <h3>Exercise 12 — Future Perfect</h3>
+    <p>By the end of this year, she ______ her degree.</p>
+    <select id="ex12">
+      <option value="">Choose an answer</option>
+      <option>completes</option><option>will complete</option><option>will be completing</option><option>will have completed</option>
+    </select>
+    <button class="secondary" onclick="checkEx12()">Check answer</button>
+    <div id="ex12fb" class="feedback"></div>
+  </div>
+
+  <h3 style="margin-top:24px">🔄 Translation Practice</h3>
+  <p>Traduza as frases para o inglês usando o tempo verbal correto. Clique em "Show answer" para verificar.</p>
+
+  <div class="translation-ex">
+    <div class="pt-sentence">"Eu trabalho aqui desde 2018."</div>
+    <button class="light" onclick="toggleTranslation(0)">Show answer</button>
+    <div class="answer-reveal" id="tr0">I have worked here since 2018.</div>
+  </div>
+  <div class="translation-ex">
+    <div class="pt-sentence">"O que você está fazendo?"</div>
+    <button class="light" onclick="toggleTranslation(1)">Show answer</button>
+    <div class="answer-reveal" id="tr1">What are you doing?</div>
+  </div>
+  <div class="translation-ex">
+    <div class="pt-sentence">"Eu visitei Londres no ano passado."</div>
+    <button class="light" onclick="toggleTranslation(2)">Show answer</button>
+    <div class="answer-reveal" id="tr2">I visited London last year.</div>
+  </div>
+  <div class="translation-ex">
+    <div class="pt-sentence">"Ela estava tomando banho quando o telefone tocou."</div>
+    <button class="light" onclick="toggleTranslation(3)">Show answer</button>
+    <div class="answer-reveal" id="tr3">She was taking a shower when the phone rang.</div>
+  </div>
+  <div class="translation-ex">
+    <div class="pt-sentence">"Acho que vai chover amanhã."</div>
+    <button class="light" onclick="toggleTranslation(4)">Show answer</button>
+    <div class="answer-reveal" id="tr4">I think it will rain tomorrow.</div>
+  </div>
+  <div class="translation-ex">
+    <div class="pt-sentence">"O trem sai às 8 da manhã."</div>
+    <button class="light" onclick="toggleTranslation(5)">Show answer</button>
+    <div class="answer-reveal" id="tr5">The train leaves at 8 am.</div>
+  </div>
+</section>
+
+<!-- ========== LISTENING ========== -->
+<section class="card" id="listening">
+  <h2>🎧 7. Listening Practice</h2>
+  <p>Ouça o texto abaixo. Se estiver estudando sozinho, leia primeiro sem olhar a tradução. Depois responda às perguntas.</p>
+
+  <div class="audio-box">
+    <button onclick="speakListening()">🔊 Play Listening</button>
+    <button class="light" onclick="toggleTranscript()">📄 Show / Hide Transcript</button>
+    <div id="transcript" class="example">
+      <div class="en">
+        Hi! My name is Lucas. I usually wake up at 6 am because I work as a teacher.
+        Right now, I am preparing my lessons for next week. I have worked at this school
+        for five years, and I have been teaching English since 2018. Yesterday, I was
+        correcting exams when my friend called me. I had already finished most of them,
+        so we talked for a while. Last month, I had been working on a big project for
+        two weeks before I finally completed it. Next year, I will be teaching a new
+        course for advanced students. I think it will be challenging but rewarding.
+        By the end of this year, I will have finished my master's degree. Tomorrow,
+        I am meeting my colleagues at 10 am to discuss the new curriculum. The meeting
+        starts at 10 sharp, so I will be there by 9:45. I'm going to prepare a
+        presentation for the meeting tonight. It's going to be a busy week!
+      </div>
+      <div class="pt">
+        Olá! Meu nome é Lucas. Normalmente acordo às 6 da manhã porque trabalho como
+        professor. Agora, estou preparando minhas aulas para a próxima semana. Trabalho
+        nesta escola há cinco anos, e leciono inglês desde 2018. Ontem, eu estava
+        corrigindo provas quando meu amigo ligou. Eu já tinha terminado a maioria
+        delas, então conversamos por um tempo. No mês passado, eu estive trabalhando
+        em um grande projeto por duas semanas antes de finalmente concluí-lo. No ano
+        que vem, estarei ensinando um novo curso para alunos avançados. Acho que será
+        desafiador mas recompensador. Até o final deste ano, terei terminado meu
+        mestrado. Amanhã, estou me encontrando com meus colegas às 10h para discutir
+        o novo currículo. A reunião começa às 10 em ponto, então estarei lá às 9:45.
+        Vou preparar uma apresentação para a reunião esta noite. Vai ser uma semana
+        agitada!
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h3>Listening Questions</h3>
+
+    <div class="listening-q">
+      <p><strong>1.</strong> What time does Lucas usually wake up?</p>
+      <select id="l1">
+        <option value="">Choose</option><option>At 5 am</option><option>At 6 am</option><option>At 7 am</option><option>At 8 am</option>
+      </select>
+    </div>
+
+    <div class="listening-q">
+      <p><strong>2.</strong> What is he doing right now?</p>
+      <select id="l2">
+        <option value="">Choose</option><option>Correcting exams</option><option>Preparing lessons</option><option>Teaching a class</option><option>Meeting colleagues</option>
+      </select>
+    </div>
+
+    <div class="listening-q">
+      <p><strong>3.</strong> How long has he worked at the school?</p>
+      <select id="l3">
+        <option value="">Choose</option><option>Two years</option><option>Three years</option><option>Five years</option><option>Ten years</option>
+      </select>
+    </div>
+
+    <div class="listening-q">
+      <p><strong>4.</strong> What was he doing when his friend called yesterday?</p>
+      <select id="l4">
+        <option value="">Choose</option><option>Teaching</option><option>Preparing lessons</option><option>Correcting exams</option><option>Watching TV</option>
+      </select>
+    </div>
+
+    <div class="listening-q">
+      <p><strong>5.</strong> How long had he been working on a project last month?</p>
+      <select id="l5">
+        <option value="">Choose</option><option>One week</option><option>Two weeks</option><option>One month</option><option>Two months</option>
+      </select>
+    </div>
+
+    <div class="listening-q">
+      <p><strong>6.</strong> What will he be teaching next year?</p>
+      <select id="l6">
+        <option value="">Choose</option><option>Basic English</option><option>Advanced course</option><option>Math</option><option>Science</option>
+      </select>
+    </div>
+
+    <div class="listening-q">
+      <p><strong>7.</strong> What will he have finished by the end of this year?</p>
+      <select id="l7">
+        <option value="">Choose</option><option>His PhD</option><option>His master's degree</option><option>A book</option><option>A course</option>
+      </select>
+    </div>
+
+    <div class="listening-q">
+      <p><strong>8.</strong> What time does the meeting start?</p>
+      <select id="l8">
+        <option value="">Choose</option><option>At 9:45</option><option>At 10 am</option><option>At 10:30</option><option>At 11 am</option>
+      </select>
+    </div>
+
+    <div class="listening-q">
+      <p><strong>9.</strong> What is he going to prepare tonight?</p>
+      <select id="l9">
+        <option value="">Choose</option><option>A report</option><option>A presentation</option><option>An exam</option><option>A lesson plan</option>
+      </select>
+    </div>
+
+    <div class="listening-q">
+      <p><strong>10.</strong> How does he describe the week ahead?</p>
+      <select id="l10">
+        <option value="">Choose</option><option>Relaxing</option><option>Boring</option><option>Busy</option><option>Short</option>
+      </select>
+    </div>
+
+    <button class="secondary" onclick="checkListening()">Check Listening</button>
+    <div id="lfb" class="feedback"></div>
+  </div>
+</section>
+
+<!-- ========== SPEAKING ========== -->
+<section class="card speaking-card" id="speaking">
+  <h2>🗣️ 8. Speaking Practice</h2>
+  <p>Agora é hora de usar o inglês. Use os tempos verbais nos três tempos: presente, passado e futuro.</p>
+
+  <div class="example">
+    <strong>Model:</strong><br>
+    <span class="en">I usually wake up at 7 am. Right now, I am studying English. I have lived here for five years. Yesterday, I was watching TV when my friend called. I had already finished my homework. Next year, I will travel to Europe. I think it will be amazing. By next month, I will have finished this course.</span>
+  </div>
+
+  <h3>Your turn!</h3>
+  <p>Fale em inglês por aproximadamente <strong>30–45 segundos</strong> usando os tempos verbais nos três tempos:</p>
+  <ol>
+    <li>What do you usually do every day? (Present Simple)</li>
+    <li>What are you doing right now? (Present Continuous)</li>
+    <li>How long have you lived in your city? (Present Perfect)</li>
+    <li>What were you doing yesterday at this time? (Past Continuous)</li>
+    <li>What had you done before you started this lesson? (Past Perfect)</li>
+    <li>What will you do next weekend? (Future)</li>
+  </ol>
+
+  <textarea id="speakingNotes" placeholder="Você pode escrever suas respostas aqui antes de falar..."></textarea>
+  <button onclick="saveSpeaking()">💾 Save My Practice</button>
+  <div id="speakFb" class="feedback"></div>
+</section>
+
+<!-- ========== QUIZ ========== -->
+<section class="card" id="quiz">
+  <h2>🎮 9. Interactive Quiz</h2>
+  <p>10 questões. Escolha uma alternativa. O feedback aparece imediatamente. <em>As questões são embaralhadas a cada tentativa.</em></p>
+
+  <div id="quizContainer"></div>
+
+  <div class="score">
+    <div>YOUR SCORE</div>
+    <strong id="score">0 / 10</strong>
+    <p id="scoreMessage">Complete o quiz para ver seu resultado.</p>
+    <button class="light" onclick="restartQuiz()">🔄 Restart Quiz</button>
+  </div>
+</section>
+
+<!-- ========== CHALLENGE ========== -->
+<section class="card">
+  <h2>🏁 Lesson Challenge</h2>
+  <p>Sem consultar o conteúdo, tente dizer em inglês:</p>
+  <div class="example">
+    <strong>"I work here every day. I am studying English right now. I have lived here for five years. Yesterday I was watching TV when my friend called. I had already eaten before she arrived. Next year I will travel to Europe. By next month, I will have finished this course."</strong>
+  </div>
+  <p class="small">Objetivo: produzir uma pequena apresentação usando os tempos verbais nos três tempos: presente, passado e futuro.</p>
+</section>
+
+</main>
+
+<footer>
+  Inglês Profissional • Preparação para Exames • Cambridge • IELTS • TOEFL • Duolingo English Test (DET)<br>
+  <span class="copyright">© English VClass • Edson D'Aguiar</span>
+  • WhatsApp ➡️ <a href="https://wa.me/5541991725009" target="_blank" rel="noopener">Contato</a>
+</footer>
+
+<script>
+/* ================================================================
+   AUDIO — global click handler
+   ================================================================ */
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('.audio-btn');
+  if (!btn) return;
+  e.stopPropagation();
+  const phrase = btn.dataset.phrase;
+  const accent = btn.dataset.accent || 'us';
+  if (!phrase) return;
+
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(phrase);
+  utterance.lang = accent === 'uk' ? 'en-GB' : 'en-US';
+  utterance.rate = 0.85;
+  utterance.pitch = 1.0;
+
+  const voices = window.speechSynthesis.getVoices();
+  if (voices.length > 0) {
+    const found = voices.find(v => v.lang.startsWith(accent === 'uk' ? 'en-GB' : 'en-US'));
+    if (found) utterance.voice = found;
+  }
+
+  btn.classList.add('playing');
+  utterance.onend = () => btn.classList.remove('playing');
+  utterance.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(utterance);
+});
+
+/* ================================================================
+   FEEDBACK HELPER
+   ================================================================ */
+function setFeedback(id, correct, text){
+  const el=document.getElementById(id);
+  el.className='feedback '+(correct?'correct':'wrong');
+  el.textContent=(correct?'🟢 ':'🔴 ')+text;
+}
+
+/* ================================================================
+   PROGRESS TRACKING
+   ================================================================ */
+const SECTIONS = ['objetivos','grammar','exercises','listening','speaking','quiz'];
+const sectionState = {};
+SECTIONS.forEach(s => sectionState[s] = false);
+
+function markSectionDone(id){
+  if (sectionState[id]) return;
+  sectionState[id] = true;
+  const link = document.querySelector('nav a[data-section="'+id+'"]');
+  if (link) link.classList.add('done');
+  updateProgress();
+}
+
+function updateProgress(){
+  const done = SECTIONS.filter(s => sectionState[s]).length;
+  const pct = Math.round((done / SECTIONS.length) * 100);
+  document.getElementById('globalProgress').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = pct;
+}
+
+document.querySelectorAll('#exercises .exercise button').forEach(btn => {
+  btn.addEventListener('click', () => markSectionDone('exercises'));
+});
+document.querySelectorAll('#listening button').forEach(btn => {
+  btn.addEventListener('click', () => markSectionDone('listening'));
+});
+document.querySelector('#speaking button')?.addEventListener('click', () => markSectionDone('speaking'));
+
+/* ================================================================
+   GRAMMAR TABS
+   ================================================================ */
+function switchGrammarTab(tab) {
+  document.querySelectorAll('#grammarTabs button').forEach(b => {
+    b.classList.toggle('active', b.dataset.tab === tab);
+  });
+  document.querySelectorAll('.tab-panel').forEach(p => {
+    p.classList.remove('active');
+  });
+  document.getElementById('panel-' + tab).classList.add('active');
+  markSectionDone('grammar');
+}
+
+/* ================================================================
+   EXERCISES
+   ================================================================ */
+function checkEx1(){
+  const v=document.getElementById('ex1').value;
+  setFeedback('ex1fb',v==='works','Correct! "She works at a hospital." (Present Simple — permanente)');
+  if(v!=='works') document.getElementById('ex1fb').textContent='🔴 Try again. Present Simple → works.';
+  markSectionDone('exercises');
+}
+function checkEx2(){
+  const v=document.getElementById('ex2').value;
+  setFeedback('ex2fb',v==='are playing','Correct! "Look! The children are playing in the garden." (Present Continuous — agora)');
+  if(v!=='are playing') document.getElementById('ex2fb').textContent='🔴 Try again. Present Continuous → are playing.';
+  markSectionDone('exercises');
+}
+function checkEx3(){
+  const v=document.getElementById('ex3').value;
+  setFeedback('ex3fb',v==='have worked','Correct! "I have worked here for three years." (Present Perfect — duração até agora)');
+  if(v!=='have worked') document.getElementById('ex3fb').textContent='🔴 Try again. Present Perfect Simple → have worked.';
+  markSectionDone('exercises');
+}
+function checkEx4(){
+  const v=document.getElementById('ex4').value;
+  setFeedback('ex4fb',v==='has been running','Correct! "She is tired because she has been running all morning." (Present Perfect Continuous — ênfase na atividade)');
+  if(v!=='has been running') document.getElementById('ex4fb').textContent='🔴 Try again. Present Perfect Continuous → has been running.';
+  markSectionDone('exercises');
+}
+function checkEx5(){
+  const v=document.getElementById('ex5').value;
+  setFeedback('ex5fb',v==='went','Correct! "I went to the cinema yesterday." (Past Simple — ação concluída)');
+  if(v!=='went') document.getElementById('ex5fb').textContent='🔴 Try again. Past Simple → went.';
+  markSectionDone('exercises');
+}
+function checkEx6(){
+  const v=document.getElementById('ex6').value;
+  setFeedback('ex6fb',v==='was sleeping','Correct! "She was sleeping when I arrived." (Past Continuous — em progresso)');
+  if(v!=='was sleeping') document.getElementById('ex6fb').textContent='🔴 Try again. Past Continuous → was sleeping.';
+  markSectionDone('exercises');
+}
+function checkEx7(){
+  const v=document.getElementById('ex7').value;
+  setFeedback('ex7fb',v==='had painted','Correct! "They had painted the house before we moved in." (Past Perfect — ação anterior)');
+  if(v!=='had painted') document.getElementById('ex7fb').textContent='🔴 Try again. Past Perfect Simple → had painted.';
+  markSectionDone('exercises');
+}
+function checkEx8(){
+  const v=document.getElementById('ex8').value;
+  setFeedback('ex8fb',v==='had been waiting','Correct! "He had been waiting for two hours when she finally called." (Past Perfect Continuous — duração)');
+  if(v!=='had been waiting') document.getElementById('ex8fb').textContent='🔴 Try again. Past Perfect Continuous → had been waiting.';
+  markSectionDone('exercises');
+}
+function checkEx9(){
+  const v=document.getElementById('ex9').value;
+  setFeedback('ex9fb',v==='will be','Correct! "I think it will be sunny tomorrow." (Will — opinião pessoal)');
+  if(v!=='will be') document.getElementById('ex9fb').textContent='🔴 Try again. Will → will be.';
+  markSectionDone('exercises');
+}
+function checkEx10(){
+  const v=document.getElementById('ex10').value;
+  setFeedback('ex10fb',v==='is going to','Correct! "Look at those dark clouds! It is going to rain." (Going to — evidência presente)');
+  if(v!=='is going to') document.getElementById('ex10fb').textContent='🔴 Try again. Going to → is going to.';
+  markSectionDone('exercises');
+}
+function checkEx11(){
+  const v=document.getElementById('ex11').value;
+  setFeedback('ex11fb',v==='will be lying','Correct! "This time tomorrow, I will be lying on the beach." (Future Continuous — em andamento)');
+  if(v!=='will be lying') document.getElementById('ex11fb').textContent='🔴 Try again. Future Continuous → will be lying.';
+  markSectionDone('exercises');
+}
+function checkEx12(){
+  const v=document.getElementById('ex12').value;
+  setFeedback('ex12fb',v==='will have completed','Correct! "By the end of this year, she will have completed her degree." (Future Perfect — concluído antes)');
+  if(v!=='will have completed') document.getElementById('ex12fb').textContent='🔴 Try again. Future Perfect → will have completed.';
+  markSectionDone('exercises');
+}
+
+/* Translation toggle */
+function toggleTranslation(i) {
+  const el = document.getElementById('tr' + i);
+  el.classList.toggle('visible');
+  markSectionDone('exercises');
+}
+
+/* ================================================================
+   LISTENING
+   ================================================================ */
+function speakListening(){
+  if(!('speechSynthesis' in window)){
+    alert('Seu navegador não oferece reprodução de voz neste momento.');
+    return;
+  }
+  const text="Hi! My name is Lucas. I usually wake up at 6 am because I work as a teacher. Right now, I am preparing my lessons for next week. I have worked at this school for five years, and I have been teaching English since 2018. Yesterday, I was correcting exams when my friend called me. I had already finished most of them, so we talked for a while. Last month, I had been working on a big project for two weeks before I finally completed it. Next year, I will be teaching a new course for advanced students. I think it will be challenging but rewarding. By the end of this year, I will have finished my master's degree. Tomorrow, I am meeting my colleagues at 10 am to discuss the new curriculum. The meeting starts at 10 sharp, so I will be there by 9:45. I'm going to prepare a presentation for the meeting tonight. It's going to be a busy week!";
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-US'; u.rate=.88;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+  markSectionDone('listening');
+}
+function toggleTranscript(){
+  const t=document.getElementById('transcript');
+  t.style.display=t.style.display==='block'?'none':'block';
+  markSectionDone('listening');
+}
+function checkListening(){
+  let score=0;
+  if(document.getElementById('l1').value==='At 6 am') score++;
+  if(document.getElementById('l2').value==='Preparing lessons') score++;
+  if(document.getElementById('l3').value==='Five years') score++;
+  if(document.getElementById('l4').value==='Correcting exams') score++;
+  if(document.getElementById('l5').value==='Two weeks') score++;
+  if(document.getElementById('l6').value==='Advanced course') score++;
+  if(document.getElementById('l7').value==='His master\'s degree') score++;
+  if(document.getElementById('l8').value==='At 10 am') score++;
+  if(document.getElementById('l9').value==='A presentation') score++;
+  if(document.getElementById('l10').value==='Busy') score++;
+  const ok=score===10;
+  const msg=ok?'Excellent! 10/10 correct.':'You got '+score+'/10. Review the transcript and try again.';
+  setFeedback('lfb',ok,msg);
+  markSectionDone('listening');
+}
+
+/* ================================================================
+   SPEAKING SAVE
+   ================================================================ */
+function saveSpeaking(){
+  const box=document.getElementById('speakingNotes');
+  const fb=document.getElementById('speakFb');
+  if(box.value.trim().length<10){
+    setFeedback('speakFb',false,'Write a few sentences first, then practice speaking them aloud.');
+  }else{
+    setFeedback('speakFb',true,'Great! Now read your sentences aloud and try to speak without looking.');
+    localStorage.setItem('englishVclassTensesSpeaking',box.value);
+  }
+  markSectionDone('speaking');
+}
+
+/* ================================================================
+   QUIZ (RANDOMIZED)
+   ================================================================ */
+const baseQuestions=[
+ {q:'Choose the correct present form: "She ___ at a hospital."',a:['works','is working','has worked','has been working'],c:0,e:'Present Simple — situação permanente.'},
+ {q:'Choose the correct present continuous: "Look! The children ___ in the garden."',a:['play','are playing','have played','have been playing'],c:1,e:'Present Continuous — ação acontecendo agora.'},
+ {q:'Choose the correct present perfect: "I ___ here for three years."',a:['work','am working','have worked','have been working'],c:2,e:'Present Perfect Simple — duração até agora.'},
+ {q:'Choose the correct past simple: "I ___ to the cinema yesterday."',a:['go','went','was going','had gone'],c:1,e:'Past Simple — ação concluída.'},
+ {q:'Choose the correct past continuous: "She ___ when I arrived."',a:['sleeps','slept','was sleeping','had slept'],c:2,e:'Past Continuous — ação em progresso.'},
+ {q:'Choose the correct past perfect: "They ___ the house before we moved in."',a:['paint','painted','were painting','had painted'],c:3,e:'Past Perfect Simple — ação anterior.'},
+ {q:'Choose the correct future (will): "I think it ___ sunny tomorrow."',a:['will be','is going to be','is','will have been'],c:0,e:'Will — previsão baseada em opinião.'},
+ {q:'Choose the correct future (going to): "Look at those dark clouds! It ___ rain."',a:['will','is going to','is','will have'],c:1,e:'Going to — previsão com evidência presente.'},
+ {q:'Choose the correct future continuous: "This time tomorrow, I ___ on the beach."',a:['lie','will lie','will be lying','will have lied'],c:2,e:'Future Continuous — ação em andamento.'},
+ {q:'Choose the correct future perfect: "By the end of this year, she ___ her degree."',a:['completes','will complete','will be completing','will have completed'],c:3,e:'Future Perfect — ação concluída antes de um momento futuro.'}
+];
+
+let questions = [];
+let quizScore=0;
+let answered=0;
+
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function buildQuestions(){
+  questions = shuffle(baseQuestions).map(q => {
+    const pairs = q.a.map((text, idx) => ({text, correct: idx === q.c}));
+    const shuffledPairs = shuffle(pairs);
+    const newOptions = shuffledPairs.map(p => p.text);
+    const newCorrect = shuffledPairs.findIndex(p => p.correct);
+    return { q: q.q, a: newOptions, c: newCorrect, e: q.e };
+  });
+}
+
+function renderQuiz(){
+  buildQuestions();
+  const c=document.getElementById('quizContainer');
+  c.innerHTML='';
+  questions.forEach((item,i)=>{
+    const box=document.createElement('div');
+    box.className='exercise';
+    box.innerHTML='<h3>Question '+(i+1)+'</h3><p><strong>'+item.q+'</strong></p>';
+    item.a.forEach((ans,j)=>{
+      const b=document.createElement('button');
+      b.className='option';
+      b.textContent=String.fromCharCode(65+j)+') '+ans;
+      b.onclick=()=>answerQuiz(i,j,box);
+      box.appendChild(b);
+    });
+    const f=document.createElement('div');
+    f.className='feedback';
+    f.id='qfb'+i;
+    box.appendChild(f);
+    c.appendChild(box);
+  });
+  updateScore();
+}
+
+function answerQuiz(i,j,box){
+  const buttons=box.querySelectorAll('.option');
+  if([...buttons].some(b=>b.disabled)) return;
+  buttons.forEach(b=>b.disabled=true);
+  const correct=j===questions[i].c;
+  buttons[j].classList.add(correct?'correct':'wrong');
+  if(!correct) buttons[questions[i].c].classList.add('correct');
+  if(correct) quizScore++;
+  answered++;
+  const fb=document.getElementById('qfb'+i);
+  fb.className='feedback '+(correct?'correct':'wrong');
+  fb.textContent=(correct?'🟢 Correct! ':'🔴 Not quite. ')+questions[i].e;
+  updateScore();
+  if(answered===10) markSectionDone('quiz');
+}
+
+function updateScore(){
+  document.getElementById('score').textContent=quizScore+' / 10';
+  const msg=document.getElementById('scoreMessage');
+  if(answered===0) msg.textContent='Complete o quiz para ver seu resultado.';
+  else if(answered<10) msg.textContent='Keep going! '+answered+' of 10 answered.';
+  else if(quizScore===10) msg.textContent='🏆 Excellent! Perfect score!';
+  else if(quizScore>=8) msg.textContent='👏 Great job! Review the questions you missed.';
+  else if(quizScore>=6) msg.textContent='👍 Good start! Review the lesson and try again.';
+  else msg.textContent='📚 Keep practicing. Review the lesson and restart the quiz.';
+}
+
+function restartQuiz(){
+  quizScore=0; answered=0; renderQuiz();
+  document.getElementById('quiz').scrollIntoView({behavior:'smooth'});
+}
+
+/* ================================================================
+   INIT
+   ================================================================ */
+renderQuiz();
+
+/* Intersection observer for sections */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      if (['objetivos','grammar','exercises','listening','speaking'].includes(id)) markSectionDone(id);
+    }
+  });
+}, { threshold: 0.35 });
+['objetivos','grammar','exercises','listening','speaking'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) observer.observe(el);
+});
+
+const saved=localStorage.getItem('englishVclassTensesSpeaking');
+if(saved) document.getElementById('speakingNotes').value=saved;
+
+updateProgress();
+</script>
+
+</body>
+</html>
